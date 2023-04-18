@@ -38,11 +38,11 @@ const Maker = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/posts/`);
-        // const data = await res.json();
+        // const res = await axios.get(`/posts/`);
+        // // const data = await res.json();
 
-        setPosts(res.data);
-        console.log(res.data);
+        // setPosts(res.data);
+        // console.log(res.data);
     
       } catch (err) {
         console.log(err);
