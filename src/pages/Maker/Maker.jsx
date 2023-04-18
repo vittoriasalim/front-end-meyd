@@ -40,10 +40,9 @@ const Maker = () => {
       try {
         const res = await axios.get(`/posts/`);
         // // const data = await res.json();
-        
-
-        setPosts(Object.values(res.data));
-        console.log(Object.values(res.data));
+        console.log(res.data);
+        // setPosts(Object.values(res.data));
+       
     
       } catch (err) {
         console.log(err);
