@@ -76,7 +76,7 @@ function Submission() {
       <div className="jobs" id="jobs">
         <div className="jobs__item">
           <div className="jobs__column ">
-            <img src={`https://meydit-project.herokuapp.com/upload/${post.images}`} className="sample_img "></img>
+            <img src={`https://meydit-project.herokuapp.com/images/${post.images}`} className="sample_img "></img>
 
             <div className="jobs__info">
               <h5 className="home_heading">JOB ID NUMBER # {post.id}</h5>

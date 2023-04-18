@@ -45,8 +45,10 @@ const Customer = () => {
     e.preventDefault();
   
     const imgUrl = await upload();
+    console.log(imgUrl)
     inputs.images = imgUrl;
     setInputs({...inputs});
+    console.log(inputs)
 
     try{
   
