@@ -1,6 +1,6 @@
 import {React, useEffect } from "react";
 import "./maker.scss";
-import axios from "axios";
+
 // import { useState } from 'react'
 
 import {axiosInstance} from "../../config.js";
