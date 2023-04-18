@@ -25,7 +25,8 @@ const Maker = () => {
       e.preventDefault();
       
       const res = await axios.post(`/posts/filter`, inputs);
-      setPosts(res.data);
+      const data = await res.json();
+      setPosts(data.data);
  
     } catch (err) {
       console.log(err);
@@ -67,7 +68,7 @@ const Maker = () => {
         {post.map((d) => {
           return (
             <div className="jobs__item">
-              {/* <div className="jobs__column jobs__column--left">
+              <div className="jobs__column jobs__column--left">
                 <img src="./asset/Cloth.png" alt="" className="jobs__img" />
 
                 <div className="jobs__info">
@@ -115,7 +116,7 @@ const Maker = () => {
                   </a>
       
       
-              </div> */}
+              </div>
             </div>
           );
         })}
