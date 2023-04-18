@@ -40,9 +40,10 @@ const Maker = () => {
       try {
         const res = await axios.get(`/posts/`);
         // // const data = await res.json();
+        
 
-        // setPosts(res.data);
-        console.log(res.data);
+        setPosts(Object.values(res.data));
+        console.log(Object.values(res.data));
     
       } catch (err) {
         console.log(err);
@@ -65,7 +66,64 @@ const Maker = () => {
         <input type="button" onClick={handleSubmit} className="filter-butt"value="FILTER"></input>
       </form>
       <div className="jobs" id="jobs">
-        <p>{post}</p>
+        
+
+      {post.map((d) => {
+          return (
+            <div className="jobs__item">
+              <div className="jobs__column jobs__column--left">
+                <img src="./asset/Cloth.png" alt="" className="jobs__img" />
+
+                <div className="jobs__info">
+                  <span className="jobs__number">JOB ID RECORD # {d.id}</span>
+                  <div className="text-cont">
+                  <p className="jobs__details-label">Name</p>
+                  <p className="jobs__details-item">
+                    :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{d.first_name} {d.last_name}
+                  </p>
+                  </div>
+                  
+                  <br></br>
+
+                  <div className="text-cont">
+                  <p className="jobs__details-label">Type Of Clothing</p>
+                  <p className="jobs__details-item">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{d.clothing_type}</p>
+                  </div>
+
+                  <br></br>
+                  <div className="text-cont">
+                  <p className="jobs__details-label">Location</p>
+                  <p className="jobs__details-item">
+                    :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{d.street_num} {d.streetname},{d.state_name} {d.post_code}
+                  </p>
+                  </div>
+
+                  <br></br>
+                  <div className="text-cont">
+                  <p className="jobs__details-label">Submission</p>
+                  <p className="jobs__details-item">
+                    :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{d.num_quotation} submissions</p>
+                  </div>
+            
+                  <br></br>
+                  <br></br>
+              
+                </div>
+              </div>
+              <div className="button-container">
+                
+                  <a href={`/submission/${d.id}`} className="job_button-sub">
+                    <i className="job-but icon_img uil uil-user"></i>
+
+                    <h5 className="job-but">VIEW JOBS</h5>
+                  </a>
+      
+      
+              </div>
+            </div>
+          );
+        })}
+
 
       </div>
     </div>
