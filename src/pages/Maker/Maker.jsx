@@ -38,8 +38,9 @@ const Maker = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(`/posts/`);
+        const data = await res.json();
 
-        setPosts(res.data);
+        setPosts(data);
     
       } catch (err) {
         console.log(err);
@@ -101,7 +102,7 @@ const Maker = () => {
             
                   <br></br>
                   <br></br>
-                  {/* <p className="jobs__details-item">{d.description}</p> */}
+              
                 </div>
               </div>
               <div className="button-container">
