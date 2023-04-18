@@ -1,11 +1,14 @@
 import {React, useEffect } from "react";
 import "./maker.scss";
+import axios from "axios";
 // import { useState } from 'react'
 
-import axios from "axios";
+import {axiosInstance} from "../../config.js";
 import {Link, useLocation } from "react-router-dom";
 // import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+
+
 
 const Maker = () => {
 
@@ -25,7 +28,7 @@ const Maker = () => {
     try {
       e.preventDefault();
       
-      const res = await axios.post(`/posts/filter`, inputs);
+      const res = await axiosInstance.post(`/posts/filter`, inputs);
 
       setPosts(res.data);
  
@@ -39,7 +42,7 @@ const Maker = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/posts/`);
+        const res = await axiosInstance.get(`/posts/`);
    
         console.log(res);
         console.log(res.data);

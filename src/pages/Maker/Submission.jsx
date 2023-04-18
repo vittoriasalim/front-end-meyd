@@ -2,7 +2,7 @@ import { React, useEffect } from "react";
 import { useLocation , useNavigate} from "react-router-dom";
 import { useState } from "react";
 import "./maker.scss";
-import axios from "axios";
+import {axiosInstance} from "../../config.js";
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
 import emailjs from 'emailjs-com';
@@ -59,7 +59,7 @@ function Submission() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/posts/${postId}`);
+        const res = await axiosInstance.get(`/posts/${postId}`);
         setJob(res.data);
   
       } catch (err) {

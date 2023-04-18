@@ -3,7 +3,3 @@ from="/*"
 to="/index.html"
 status=200
 
-[[redirects]]
-from="/api/posts/"
-to="https://meydit-project.herokuapp.com/api/posts/"
-status=200
