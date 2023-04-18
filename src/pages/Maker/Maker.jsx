@@ -59,13 +59,7 @@ const Maker = () => {
               <option value="Dress">Dress</option>
               <option value="Ethnic Wear">Ethnic Wear</option>
         </select>
-       
-        
-        
         <input type="button" onClick={handleSubmit} className="filter-butt"value="FILTER"></input>
-      
-
-        
       </form>
       <div className="jobs" id="jobs">
         {post.map((d) => {
