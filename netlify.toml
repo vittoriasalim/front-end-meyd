@@ -1,2 +1,2 @@
-/api/* https://main--meydit.netlify.app/ 200
+/api/* https://main--meydit.netlify.app/:splat 200
 /* /index.html 200          
