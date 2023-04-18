@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import {React, useEffect } from "react";
 import "./maker.scss";
 // import { useState } from 'react'
 import axios from "axios";
@@ -38,9 +38,10 @@ const Maker = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(`/posts/`);
-        const data = await res.json();
+        // const data = await res.json();
 
-        setPosts(data);
+        setPosts(res.data);
+        console.log(res.data);
     
       } catch (err) {
         console.log(err);
