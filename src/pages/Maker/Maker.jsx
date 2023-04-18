@@ -38,11 +38,11 @@ const Maker = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/posts/`);
+        const res = await axios.get(`https://meydit-project.herokuapp.com/api/posts/`);
         // // const data = await res.json();
         console.log(res);
         console.log(res.data);
-        // setPosts(Object.values(res.data));
+        setPosts(Object.values(res.data));
        
     
       } catch (err) {
