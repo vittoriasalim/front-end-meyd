@@ -26,7 +26,7 @@ const Customer = () => {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await axios.post("/upload", formData);
+      const res = await axios.post(`/upload`, formData);
       return res.data;
     } catch (err) {
       setError(err.response.data)
